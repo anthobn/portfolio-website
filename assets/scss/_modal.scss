@@ -1,0 +1,140 @@
+/* DOCUMENT INFORMATION
+	- Document: SCSS Style for Portfolio
+	- Version:  1
+	- Author:   Anthony BARNOIN
+*/
+
+$border-radius: 1rem;
+
+/* The Modal (background) */
+.modal {
+  text-align: left;
+  display: none; // Hidden by default
+  position: fixed; // Stay in place
+  z-index: 1;
+  padding-top: 2rem; // Location of the box
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); // Black w/ opacity
+}
+
+/* Modal Content */
+.modal-content {
+  width: 90%;
+
+  @include media-min(lg) {
+    width: 80%;
+  }
+
+  position: relative;
+  background-color: #fff;
+  margin: auto;
+  padding: 0;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.5s;
+}
+
+@keyframes animatetop {
+  from {
+    top: -18.75rem;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem;
+  background-color: $bs-orange;
+  border-radius: $border-radius $border-radius 0 0;
+  color: white;
+
+  h2 {
+    margin: 0;
+  }
+
+  /* The Close Button */
+  .modal-close {
+    color: $bs-navy;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  .modal-close:hover,
+  .modal-close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.modal-body {
+  height: 75vh;
+  overflow-y: scroll;
+  padding: 0 1rem;
+
+  @include media-min(lg) {
+    padding: 0 3rem;
+  }
+
+  hr.separate {
+    width: 50%;
+    margin-top: 2rem;
+    opacity: 0.2;
+  }
+
+  .subsection {
+    margin-left: 1rem;
+
+    h2 {
+      font-size: 1.2rem;
+      color: $bs-red;
+    }
+
+    @include box-flex($box-width: 15rem);
+  }
+
+  .video-container {
+    margin: auto;
+    @include media-min(lg) {
+      width: 70%;
+    }
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.modal-footer {
+  padding: 0.4rem 2rem;
+  background-color: $bs-navy;
+  border-radius: 0 0 $border-radius $border-radius;
+  text-align: right;
+
+  button {
+    padding: 0.7rem;
+    color: #fff;
+    background-color: $bs-orange;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: darken($bs-orange, $amount: 12);
+    }
+  }
+}

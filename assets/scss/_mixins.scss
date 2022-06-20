@@ -1,0 +1,53 @@
+/* DOCUMENT INFORMATION
+	- Document: SCSS Style for Portfolio
+	- Version:  1
+	- Author:   Anthony BARNOIN
+*/
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+@mixin media-min($_key) {
+  @media screen and (min-width: map-get($breakpoints, $_key)) {
+    @content;
+  }
+}
+
+@mixin a-whitout-decoration($color: #000) {
+  outline: none;
+  text-decoration: none;
+  color: $color;
+
+  &:hover {
+    color: darken($color, $amount: 12);
+  }
+}
+
+@mixin box-flex(
+  $margin-top: 2.5rem,
+  $margin-right: 2.5rem,
+  $margin-bot: 0,
+  $margin-left: 2.5rem,
+  $box-width: initial
+) {
+  .box-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .box {
+      margin: $margin-top $margin-right $margin-bot $margin-left;
+      width: $box-width;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+}

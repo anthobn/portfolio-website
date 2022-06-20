@@ -1,0 +1,102 @@
+/* DOCUMENT INFORMATION
+	- Document: SCSS Style for Portfolio
+	- Version:  1
+	- Author:   Anthony BARNOIN
+*/
+
+$gutter: 1.5rem;
+$border-width: 0.25rem;
+$dot-diameter: 0.5rem;
+
+.timeline-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.timeline {
+  max-width: 50rem;
+  padding: 5rem 0;
+  position: relative;
+  box-shadow: $container-shadow;
+
+  //middle line
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 33%;
+    bottom: 0;
+    width: $border-width;
+    background: #ddd;
+  }
+}
+
+.entry {
+  clear: both;
+  text-align: justify;
+
+  &:last-child .body {
+    margin: 0;
+  }
+
+  .title {
+    float: left;
+    width: 33%;
+    padding-right: $gutter;
+    text-align: right;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: $dot-diameter;
+      height: $dot-diameter;
+      border: $border-width solid salmon;
+      background-color: #fff;
+      border-radius: 100%;
+      top: 15%;
+      right: -0.65rem;
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .body {
+    margin: 0 0 3rem;
+    padding: 0 $gutter;
+    float: right;
+    width: 66%;
+
+    p {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    ul {
+      color: #aaa;
+      padding-left: 0;
+      list-style-type: none;
+
+      li:before {
+        content: "–";
+        margin-right: 0.5em;
+      }
+
+      ul {
+        margin: 0.4rem 0 0 1.2rem;
+      }
+    }
+  }
+}
