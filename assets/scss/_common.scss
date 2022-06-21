@@ -257,6 +257,8 @@ header {
   #skills {
     @include box-flex(2rem, 0, 2rem, 0);
 
+    overflow: hidden; //avoid scrollbar when animate in progress
+
     section {
       margin: 1.5rem 0;
 
@@ -324,7 +326,6 @@ header {
     .box {
       cursor: pointer;
 
-      border: solid 0.1rem rgba(black, 0.4);
       box-shadow: $container-shadow;
       border-radius: 1rem;
       padding: 1rem;
