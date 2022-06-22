@@ -19,6 +19,12 @@ html {
   text-align: justify;
 }
 
+hr.separate {
+  width: 50%;
+  margin-top: 2rem;
+  opacity: 0.2;
+}
+
 .container-shadow {
   width: 97%;
   box-shadow: $container-shadow;
@@ -343,6 +349,22 @@ header {
         display: block;
         margin: 1rem 0;
         text-align: justify;
+      }
+    }
+  }
+
+  #outro {
+    margin-bottom: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    .container {
+      max-width: 70rem;
+
+      p {
+        margin: 0;
       }
     }
   }
